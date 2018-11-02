@@ -1,13 +1,22 @@
 <template>
   <section class="container">
     <h1>Contact Manager</h1>
-    <dl>
-      <dt>Name</dt>
-      <dd class="contact-name">${contact.name}</dd>
-      <dt>Phone Number</dt>
-      <dd class="contact-phone">${contact.phone}</dd>
-      <dt>Email Address</dt>
-      <dd class="contact-email">${contact.email}</dd>
-    </dl>
+    <div class="row">
+      <div class="col-md-4 list-group">
+        <div repeat.for="contact of contacts" class="list-group-item">${contact.name}</div>
+      </div>
+      <dl class="col-md-8" if.bind="contact">
+        <dt>Name</dt>
+        <dd class="contact-name">${contact.name}</dd>
+        <template if.bind="contact.phone">
+          <dt>Phone Number</dt>
+          <dd class="contact-phone">${contact.phone}</dd>
+        </template>
+        <template if.bind="contact.email">
+          <dt>Email Address</dt>
+          <dd class="contact-email">${contact.email}</dd>
+        </template>
+      </dl>
+    </div>
   </section>
 </template>
