@@ -1,0 +1,30 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "target": "es5",
+    "module": "system",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "moduleResolution": "node",
+    "allowJs": true,
+    "lib": [
+      "DOM",
+      "ESNext",
+      "ScriptHost"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"]
+    },
+    "preserveWatchOutput": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
