@@ -1,10 +1,12 @@
 import { inject } from 'aurelia-framework';
+import { Router } from 'aurelia-router';
 import { ContactService } from 'services/contact';
 
-@inject(ContactService)
+@inject(ContactService, Router)
 export class EditViewModel {
-  constructor(contactService) {
+  constructor(contactService, router) {
     this.contactService = contactService;
+    this.router = router;
   }
   activate() {
     return this.contactService.getContactById(1)
@@ -13,6 +15,6 @@ export class EditViewModel {
   save() {
     const { id } = this.contact;
     this.contactService.saveContact(id, this.contact)
-      .then(({ name, email, phone }) => this.contact = { id, name, email, phone });
+    this.router.navigateToRoute('view-contact');
   }
 }
