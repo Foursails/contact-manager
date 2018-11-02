@@ -8,13 +8,13 @@ export class EditViewModel {
     this.contactService = contactService;
     this.router = router;
   }
-  activate() {
-    return this.contactService.getContactById(1)
-      .then((contact) => this.contact = contact);
+  activate({ id }) {
+    return this.contactService.getContactById(id)
+      .then(({ name, email, phone }) => this.contact = { id, name, email, phone });
   }
   save() {
     const { id } = this.contact;
     this.contactService.saveContact(id, this.contact)
-    this.router.navigateToRoute('view-contact');
+    this.router.navigateToRoute('home');
   }
 }
