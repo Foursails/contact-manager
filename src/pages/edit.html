@@ -13,6 +13,7 @@
         <span>Email Address</span>
         <input type="email" value.bind="contact.email" class="form-control" />
       </label>
+      <button click.delegate="save()" disabled.bind="!contact.name" class="btn btn-primary">Save</button>
     </form>
   </section>
 </template>

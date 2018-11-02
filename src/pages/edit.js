@@ -10,4 +10,9 @@ export class EditViewModel {
     return this.contactService.getContactById(1)
       .then((contact) => this.contact = contact);
   }
+  save() {
+    const { id } = this.contact;
+    this.contactService.saveContact(id, this.contact)
+      .then(({ name, email, phone }) => this.contact = { id, name, email, phone });
+  }
 }
