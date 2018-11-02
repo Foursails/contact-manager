@@ -9,12 +9,20 @@ export class EditViewModel {
     this.router = router;
   }
   activate({ id }) {
-    return this.contactService.getContactById(id)
-      .then(({ name, email, phone }) => this.contact = { id, name, email, phone });
+    if (id) {
+      return this.contactService.getContactById(id)
+        .then(({ name, email, phone }) => this.contact = { id, name, email, phone });
+    } else {
+      this.contact = {};
+    }
   }
   save() {
     const { id } = this.contact;
-    this.contactService.saveContact(id, this.contact)
+    if (id) {
+      this.contactService.saveContact(id, this.contact);
+    } else {
+      this.contactService.createContact(this.contact);
+    }
     this.router.navigateToRoute('home');
   }
 }
