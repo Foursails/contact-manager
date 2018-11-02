@@ -15,4 +15,15 @@ export class ContactService {
     const contact = this.contacts.find((contact) => contact.id == id);
     return Promise.resolve(contact);
   }
+  saveContact(id, update) {
+    return this.getContactById(id)
+      .then((contact) => {
+        if (contact) {
+          contact.name = update.name;
+          contact.phone = update.phone;
+          contact.email = update.email;
+        }
+        return contact;
+      });
+  }
 }
