@@ -1,1 +1,18 @@
-<template></template>
+<template>
+  <section id="edit-view">
+    <form>
+      <label class="form-group d-block">
+        <span>Name</span>
+        <input type="text" value.bind="contact.name" class="form-control" />
+      </label>
+      <label class="form-group d-block">
+        <span>Phone Number</span>
+        <input type="tel" value.bind="contact.phone" class="form-control" />
+      </label>
+      <label class="form-group d-block">
+        <span>Email Address</span>
+        <input type="email" value.bind="contact.email" class="form-control" />
+      </label>
+    </form>
+  </section>
+</template>
