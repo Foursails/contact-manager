@@ -1,5 +1,10 @@
+import { inject } from 'aurelia-framework';
+import { ContactService } from 'services/contact';
+
+@inject(ContactService)
 export class ShellViewModel {
-  constructor() {
+  constructor(contactService) {
+    this.contactService = contactService;
     this.contact = {
       name: 'Matthew James Davis',
       email: 'matt.davis@aurelia.io'
