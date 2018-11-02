@@ -11,6 +11,10 @@ export class ShellViewModel {
     };
     this.contacts = [this.contact];
   }
+  activate() {
+    return this.contactService.getAllContacts()
+      .then((contacts) => this.contacts = contacts);
+  }
   configureRouter(config, router) {
     config.map([
       { route: '', moduleId: 'pages/detail' },
