@@ -26,4 +26,9 @@ export class ContactService {
         return contact;
       });
   }
+  createContact({ name, phone, email}) {
+    const contact = { id: ++ID, name, phone, email };
+    this.contacts.push(contact);
+    return Promise.resolve(contact);
+  }
 }
