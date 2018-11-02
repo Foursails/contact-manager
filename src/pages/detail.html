@@ -1,1 +1,14 @@
-<template></template>
+<template>
+  <dl if.bind="contact">
+    <dt>Name</dt>
+    <dd class="contact-name">${contact.name}</dd>
+    <template if.bind="contact.phone">
+      <dt>Phone Number</dt>
+      <dd class="contact-phone">${contact.phone}</dd>
+    </template>
+    <template if.bind="contact.email">
+      <dt>Email Address</dt>
+      <dd class="contact-email">${contact.email}</dd>
+    </template>
+  </dl>
+</template>
