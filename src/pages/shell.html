@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-4 list-group">
         <div repeat.for="contact of contacts" class="list-group-item d-flex">
-          <span>${contact.name}</span>
+          <a route-href="route: view-contact; params.bind: { id: contact.id }">${contact.name}</a>
           <a route-href="route: edit-contact; params.bind: { id: contact.id }" class="ml-auto">Edit</a>
         </div>
       </div>
