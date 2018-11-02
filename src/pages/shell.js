@@ -17,8 +17,8 @@ export class ShellViewModel {
   }
   configureRouter(config, router) {
     config.map([
-      { route: '', moduleId: 'pages/detail' },
-      { route: 'edit', moduleId: 'pages/edit' }
+      { route: '', name: 'view-contact', moduleId: 'pages/detail' },
+      { route: 'edit', name: 'edit-contact', moduleId: 'pages/edit' }
     ]);
     this.router = router;
   }

@@ -3,7 +3,10 @@
     <h1>Contact Manager</h1>
     <div class="row">
       <div class="col-md-4 list-group">
-        <div repeat.for="contact of contacts" class="list-group-item">${contact.name}</div>
+        <div repeat.for="contact of contacts" class="list-group-item d-flex">
+          <span>${contact.name}</span>
+          <a route-href="edit-contact" class="ml-auto">Edit</a>
+        </div>
       </div>
       <router-view class="col-md-8"></router-view>
     </div>
